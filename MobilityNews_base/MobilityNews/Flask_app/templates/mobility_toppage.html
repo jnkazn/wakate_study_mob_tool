@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- toppage のイメージを作成　装飾は一切なし-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Mobility News</title>
+        <!-- jinjaを用いた外部ファイルの指定方法-->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/site.css')}}" />
+        <script type="text/javascript" src="{{ url_for('static', filename='js/toppage_deco.js')}}" ></script>
+    </head>
+    <body>
+        <h2 id="news_name">Gazoon News</h2>
+        <span id="gazoon"></span>
+        <h2 id="news_name">techcrunch</h2>
+        <span id="techcrunch"></span>
+
+        <!-- ニュースサイトから取得した値を取り出す-->
+        <script type="text/javascript">
+            //jinjaのfor文を使用してget_article.pyからの値を取り出す
+            //まずはgazoonのニュースサイト
+            {% for items_list in gazoon_top_news %}
+                news_list = []
+                {% for item in items_list%}
+                    news_list.push("{{item}}")
+                {% endfor %}
+                //toppage_deco.jsの関数を使用する
+                gazoon(news_list)
+            {% endfor %}
+
+            //次にtechcrunchのニュースサイト
+            {% for items_list in techcrunch_mobility_contents %}
+                 news_list = []
+                {% for item in items_list%}
+                    news_list.push("{{item}}")
+                {% endfor %}
+                techcrunch(news_list)
+            {% endfor %}
+        </script>
+    </body>
+</html>
