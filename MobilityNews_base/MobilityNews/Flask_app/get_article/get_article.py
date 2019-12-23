@@ -9,8 +9,8 @@ techcrunch_mobility_url = 'https://jp.techcrunch.com/mobility/'
 
 # 社内のプロキシを突破するために設定直書き
 proxies = {
-    'http': 'http://sassa.takuya@jp.fujitsu.com:9409203122@rep.proxy.nic.fujitsu.com:8080',
-    'https': 'http://sassa.takuya@jp.fujitsu.com:9409203122@rep.proxy.nic.fujitsu.com:8080',
+    'http': 'http://*****.*****@jp.*****.com:*****@*****:8080',
+    'https': 'http://*****.*****@jp.*****.com:*****@*****:8080',
 }
 
 """
